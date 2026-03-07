@@ -1,4 +1,5 @@
-<script setup lang="ts">
+const fs = require('fs');
+const v = `<script setup lang="ts">
 import {ref,onMounted}from'vue'
 const isScrolled=ref(false)
 onMounted(()=>{window.addEventListener('scroll',()=>{isScrolled.value=window.scrollY>50})})
@@ -47,4 +48,6 @@ const navLinks=[{href:'#about',label:'About'},{href:'#skills',label:'Skills'},{h
 <div class="flex justify-center gap-6 mt-12"><a v-for="s in social" :key="s.name" :href="s.url" class="text-3xl hover:scale-110 transition-transform">{{s.icon}}</a></div></section>
 <footer class="py-8 bg-slate-900 text-slate-400 text-center"><p>© 2026 Jovan. Built with Vue 3 and Tailwind CSS</p></footer>
 </div>
-</template>
+</template>`;
+fs.writeFileSync('C:/Users/Celindo01/.openclaw/workspace/tmp/jovan-portfolio/src/App.vue', v);
+console.log('Done!');
